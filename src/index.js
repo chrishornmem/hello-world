@@ -1,6 +1,7 @@
-const logger = require('debug-level').log('todos')
+require('dotenv').config();
 
-//const { connect } = require('mongoose-connection-wrapper')
+const logger = require('debug-level')('hello-world')
+
 const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
@@ -16,13 +17,6 @@ const api   = require('./app_api/routes/index.js')
 const mode = app.get('env').toLowerCase()
 
 let public_folder
-
-// Connect to db
-// connect().then(() => {
-//     logger.info("db connected")
-// })
-
-require('./app_api/models/db')
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -65,7 +59,5 @@ app.get('/*', function(req, res, next) {
 
 server.listen(config.httpPort)
 logger.info("listening on port:" + config.httpPort)
-
-api.initialize()
 
 module.exports = app

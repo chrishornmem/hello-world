@@ -1,7 +1,7 @@
 {
-  "name": "onem-api",
+  "name": "onem-hello-world-example",
   "version": "1.0.0",
-  "description": "ONEm Todos",
+  "description": "ONEm Hello World Example",
   "main": "index.js",
   "engines": {
     "node": "10.15.3"
@@ -9,8 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/index",
-    "start:dev": "nodemon ./src/index",
-    "start:docker": "nodemon ./todos/src/index"
+    "start:dev": "nodemon ./src/index"
   },
   "repository": {
     "type": "git",
@@ -28,7 +27,6 @@
   "homepage": "https://github.com/mcoin-project/onem-api#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "debug": "^4.1.1",
     "debug-level": "^0.3.0",
     "dotenv": "^7.0.0",
     "errorhandler": "^1.5.1",
@@ -36,12 +34,12 @@
     "http": "0.0.0",
     "jwt-simple": "^0.5.6",
     "method-override": "^3.0.0",
-    "mongoose": "^5.5.9",
-    "mongoose-connection-wrapper": "0.0.3",
     "morgan": "^1.9.1",
     "onem-nodejs-api": "^1.0.7",
-    "path": "^0.12.7",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4"
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "nodemon": "^1.19.1"
   }
 }
