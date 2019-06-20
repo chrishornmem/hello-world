@@ -1,12 +1,12 @@
 
-const logger = require('debug-level')('hello.world')
+const logger = require('debug-level')('hello-world')
 const express = require('express')
 const api = express.Router()
 const Service = require('onem-nodejs-api').Service
 
 const jwt = require('jwt-simple')
 
-var hello = new Service('', "HELLO", '', []);
+var hello = new Service("HELLO");
 
 const landingMenu = hello.addMenu('./src/app_api/templates/helloLanding.pug')
 landingMenu.header("HELLO WORLD MENU")
@@ -35,8 +35,7 @@ function getUser(req, res, next) {
  */
 // Landing menu
 api.get('/hello', getUser, async function (req, res) {
-    landingMenu.data = await landingMenuData(req.user)
-    res.json({ data: landingMenu.render() })
+    res.json(landingMenu.render())
 })
 
 module.exports = api
