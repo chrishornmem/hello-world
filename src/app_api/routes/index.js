@@ -34,7 +34,7 @@ function getUser(req, res, next) {
  * Routes
  */
 // Landing menu
-api.get('/hello', getUser, async function (req, res) {
+api.get('/', getUser, async function (req, res) {
     res.json(landingMenu.render())
 })
 
